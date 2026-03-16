@@ -10,15 +10,22 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 20vh;
-  margin-top: 5vh;
+  width: 100%;
+  /* width: 100vw; */
+
+  padding: 40px 20px 20px;
+  text-align: center;
+
+  /* height: 20vh;
+  margin-top: 5vh; */
 }
 
 h1 {
   font-size: 2.5rem;
   font-weight: 700px;
   color: #183b56;
+
+  line-height: 1.3;
 }
 
 .line {
@@ -35,9 +42,11 @@ h2 {
   font-size: 1.25rem;
   letter-spacing: 0.2px;
   color: #183b56;
-  position: absolute;
-  top: 170px;
-  left: 30px;
+  /* position: absolute; */
+  /* top: 170px; */
+  /* left: 30px; */
+
+  margin-top: 20px;
 }
 
 h4 {
@@ -45,34 +54,48 @@ h4 {
   color: #5a7184;
   font-size: 1rem;
   font-weight: 400;
-  position: absolute;
-  top: 210px;
-  left: 30px;
+  /* position: absolute; */
+  /* top: 210px; */
+  /* left: 30px; */
+
+  margin-top: 6px;
 }
 
 h3 {
   position: absolute;
   font-weight: 500;
   letter-spacing: 0.2px;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  /* font-size: 1.5rem; */
   color: white;
-  width: 136px;
-  height: 102px;
-  top: 80px;
-  padding-left: 25px;
+  /* width: 136px; */
+
+  width: 140px;
+  /* height: 102px; */
+  /* top: 80px; */
+  left: 25px;
+  top: 60px;
+  line-height: 1.4;
+  /* padding-left: 25px; */
 }
 
 .categories {
+
+  width: 100%;
+  /* max-width: 1400px; */
+  margin: 0 auto;
+  padding: 20px 16px 40px;
   max-width: 1900px;
   min-width: 450px;
-  width: 100vw;
-  height: 50vh;
+  /* width: 100vw; */
+  /* height: 50vh; */
 }
 
 .row-1,
 .row-2 {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;           /* ← allows wrapping on smaller screens */
   justify-content: center;
 }
 
@@ -80,8 +103,14 @@ h3 {
 .job-more {
   position: relative;
   width: 280px;
-  height: 268px;
+
+  min-height: 268px;
   padding: 30px;
+
+  /* margin: 16px; */
+  /* height: 268px; */
+  /* padding: 30px; */
+
   margin: 20px 30px;
   border: 1px solid #ededed;
   border-radius: 8px;
@@ -93,13 +122,18 @@ h3 {
 }
 
 .job-more {
-  position: relative;
+  /* position: relative; */
   cursor: pointer;
   padding: 0px;
   background-color: #ff8345;
-  width: 280px;
-  height: 268px;
-  border-radius: 8px;
+
+  /* width: 280px; */
+  /* height: 268px; */
+  /* border-radius: 8px; */
+
+  border: none;
+  overflow: hidden;
+
 }
 
 .icon {
@@ -109,7 +143,7 @@ h3 {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: none;
+  /* border: none; */
   background-color: hsla(20, 100%, 64%, 0.1);
 }
 
@@ -125,8 +159,10 @@ h3 {
 /* arrow */
 .arrow {
   position: absolute;
-  top: 210px;
-  left: 235px;
+  /* top: 210px; */
+  /* left: 235px; */
+  bottom: 28px;
+  right: 28px;
   width: 32px;
   height: 32px;
 }
@@ -135,36 +171,107 @@ h3 {
   position: absolute;
   width: 32px;
   height: 32px;
-  top: 130px;
-  left: 242px;
+  /* top: 130px; */
+  /* left: 242px; */
+  bottom: 28px;
+  right: 28px;
 }
 
 .first-line {
   position: absolute;
   opacity: 0.5;
-  bottom: 200px;
-  left: 90px;
+
+  top: 0;
+  right: 0;
+
+  /* bottom: 200px; */
+  /* left: 90px; */
 }
 
 .second-line {
   position: absolute;
   opacity: 0.5;
-  bottom: 160px;
-  left: 50px;
+  top: 40px;
+  right: 0;
+
+  /* bottom: 160px; */
+  /* left: 50px; */
 }
 
 .third-line {
   position: absolute;
   opacity: 0.5;
-  top: 183px;
+  bottom: 40px;
+  /* top: 183px; */
   left: 0px;
 }
 
 .fourth-line {
   position: absolute;
   opacity: 0.5;
-  top: 230px;
+
+  bottom: 0px;
+  /* top: 230px; */
   left: 0px;
 }
 
 /* Start coding here */
+/* ══════════════════════════════════════════
+         RESPONSIVE — Tablet  (max-width: 960px)
+         2 cards per row
+      ══════════════════════════════════════════ */
+      @media (max-width: 960px) {
+        h1 {
+          font-size: 2rem;
+        }
+ 
+        .job-item,
+        .job-more {
+          width: calc(50% - 32px); /* 2 per row with margin */
+          min-width: 200px;
+        }
+      }
+ 
+      /* ══════════════════════════════════════════
+         RESPONSIVE — Mobile  (max-width: 600px)
+         1 card per row, full-width
+      ══════════════════════════════════════════ */
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 1.6rem;
+        }
+ 
+        .topic {
+          padding: 28px 16px 12px;
+        }
+ 
+        .categories {
+          padding: 10px 12px 32px;
+        }
+ 
+        .job-item,
+        .job-more {
+          width: 100%;          /* full width */
+          min-height: auto;
+          margin: 10px 0;
+          padding: 24px;
+          }
+
+ 
+        /* Arrow: keep bottom-right but adjust for tighter padding */
+        .arrow {
+          bottom: 22px;
+          right: 22px;
+        }
+ 
+        .explore-more-arrow {
+          bottom: 22px;
+          right: 22px;
+        }
+ 
+        h3 {
+          font-size: 1.1rem;
+          top: 50px;
+          left: 20px;
+        }
+      }
